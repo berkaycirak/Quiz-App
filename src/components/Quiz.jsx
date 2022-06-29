@@ -12,6 +12,7 @@ function Quiz() {
       setScore(score + 1);
     }
     setCurrQuestion(currQuestion + 1);
+    setOptionChosen('');
   };
 
   const finishQuiz = () => {
@@ -25,16 +26,28 @@ function Quiz() {
     <div className='quiz'>
       <h1>{Questions[currQuestion].prompt}</h1>
       <div className='options'>
-        <button onClick={() => setOptionChosen('A')}>
+        <button
+          className={optionChosen === 'A' && 'active'}
+          onClick={() => setOptionChosen('A')}
+        >
           {Questions[currQuestion].optionA}
         </button>
-        <button onClick={() => setOptionChosen('B')}>
+        <button
+          className={optionChosen === 'B' && 'active'}
+          onClick={() => setOptionChosen('B')}
+        >
           {Questions[currQuestion].optionB}
         </button>
-        <button onClick={() => setOptionChosen('C')}>
+        <button
+          className={optionChosen === 'C' && 'active'}
+          onClick={() => setOptionChosen('C')}
+        >
           {Questions[currQuestion].optionC}
         </button>
-        <button onClick={() => setOptionChosen('D')}>
+        <button
+          className={optionChosen === 'D' && 'active'}
+          onClick={() => setOptionChosen('D')}
+        >
           {Questions[currQuestion].optionD}
         </button>
       </div>
